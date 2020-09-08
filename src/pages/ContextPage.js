@@ -18,7 +18,9 @@ export default class ContextPage extends Component {
             <div>
                 666
                 <div>
-                    <ContextTypePage {...theme}></ContextTypePage>
+                    <ThemeContext.Provider value={theme}>
+                        <ContextTypePage/>
+                    </ThemeContext.Provider>
                 </div>
             </div>
         )
