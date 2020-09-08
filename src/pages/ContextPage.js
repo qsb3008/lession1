@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import ContextTypePage from './ContextTypePage'
-
-const ThemeContext = React.createContext();
-
+import { ThemeContext } from '../Context'
 export default class ContextPage extends Component {
     constructor (props) {
         super(props)
