@@ -1,23 +1,38 @@
 import React, { Component } from 'react'
 import ContextTypePage from './ContextTypePage'
-import { ThemeContext } from '../Context'
+import UserPage from './UserPage'
+import { ThemeContext, UserContext } from '../Context'
 export default class ContextPage extends Component {
     constructor (props) {
         super(props)
         this.state = {
             theme: {
                 themeColor: 'red'
+            },
+            user: {
+                name: 'qsb'
             }
         }
     }
+    handleColor = () => {
+        const { themeColor } = this.state.theme
+        this.setState({
+            theme: {
+                themeColor: themeColor === 'red' ? 'green' : 'red'
+            }
+        })
+    }
     render() {
-        const { theme } = this.state
+        const { theme, user } = this.state
         return (
             <div>
-                666
+                <button onClick={this.handleColor}>变色</button>
                 <div>
                     <ThemeContext.Provider value={theme}>
-                        <ContextTypePage/>
+                        <UserContext.Provider value={user}>
+                            <ContextTypePage/>
+                            <UserPage></UserPage>
+                        </UserContext.Provider>
                     </ThemeContext.Provider>
                 </div>
             </div>

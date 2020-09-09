@@ -18,6 +18,8 @@ export default class ContextTypePage extends Component {
     // export default xxx
     // 如果在函数组件要用 useContext
     static contextType = ThemeContext
+    // contextType只能使用一个
+    // 使用多个还是要用函数组件的useContext，或者使用consumer接受
     render() {
         const { themeColor } = this.context
         // this里面有个context
