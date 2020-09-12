@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import ContextPage from './pages/ContextPage'
+// import ContextPage from './pages/ContextPage'
+import AntdFormPage from './pages/AntdFormPage'
+import 'antd/dist/antd.css';
 
 function App() {
   return (
     <div className="App">
-      <ContextPage></ContextPage>
+      <AntdFormPage></AntdFormPage>
     </div>
   );
 }
