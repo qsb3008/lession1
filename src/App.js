@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 // import ContextPage from './pages/ContextPage'
 // import AntdFormPage from './pages/AntdFormPage'
-import RefLearn from './pages/RefLearn'
+import MyRCForm from './pages/MyRCForm'
 import 'antd/dist/antd.css';
 
 const storeRef = React.createRef()
@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <div onClick={handleClick}>click</div>
-      <RefLearn ref={storeRef}></RefLearn>
+      <MyRCForm ref={storeRef}></MyRCForm>
     </div>
   );
 }
