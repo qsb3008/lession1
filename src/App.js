@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 // import ContextPage from './pages/ContextPage'
 // import AntdFormPage from './pages/AntdFormPage'
-import MyRCForm from './pages/MyRCForm'
+import MyRCForm from './pages/MyRCFormPage'
 import 'antd/dist/antd.css';
 
 const storeRef = React.createRef()
