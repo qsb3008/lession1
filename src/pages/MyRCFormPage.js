@@ -1,14 +1,14 @@
 import React from "react";
 import { Input, Button } from "antd";
 // antd底层也是用的rc-field-form封装的
-import { createForm } from 'rc-form'
+import createForm from '../components/myRcFieldForm/my-rc-form'
 // import Form, { Field } from '../components/myRcFieldForm'
 
 
 const nameRules = { required: true, message: "请输入姓名！" };
 const passworRules = { required: true, message: "请输入密码！" };
 
-@createForm()
+@createForm
 class MyRCFormPage extends React.Component {
     componentDidMount () {
         const { setFieldsValue } = this.props.form
@@ -18,7 +18,8 @@ class MyRCFormPage extends React.Component {
     }
 
     submit = () => {
-        const { validateFields } = this.props.form
+        const { validateFields, getFieldValue } = this.props.form
+        console.log(getFieldValue('userName'))
         validateFields((error, val) => {
             if(error) {
                 console.log('失败：', error)
@@ -29,6 +30,9 @@ class MyRCFormPage extends React.Component {
     }
 
     render () {
+        // antd3,改变一个input的内容，就会全部重新渲染，性能太低
+        // 所以antd4，改为rc-field-from
+        console.log('this,props: ', this.props)
         const { getFieldDecorator } = this.props.form
         return <div>
             {
